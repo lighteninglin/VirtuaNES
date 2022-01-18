@@ -513,6 +513,9 @@ WORD	szKeyTemp[64];
 			::strcpy( netplay.szRecentPort[i], szTemp );
 	}
 
+	// 增加帧数设置
+	netplay.nLatencyMax = CRegistry::GetProfileInt(section.c_str(), "LatencyMax", netplay.nLatencyMax);
+
 	netplay.nRecentHost = CRegistry::GetProfileInt( section.c_str(), "RecnetHostNum", netplay.nRecentHost );
 	for( i = 0; i < netplay.nRecentHost; i++ ) {
 		::wsprintf( keys, "RecentHost%02d", i );
@@ -1056,4 +1059,6 @@ void	CCfgNetPlay::Default() {
 
 	nRecentPort = 1;
 	nRecentHost = 1;
+	
+	nLatencyMax = 9;
 }

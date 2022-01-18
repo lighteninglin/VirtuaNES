@@ -137,7 +137,7 @@ DLGMSG	CNetPlayDlg::OnInitDialog( DLGMSGPARAM )
 
 	// レイテンシ
 	::SendDlgItemMessage( m_hWnd, IDC_NET_LATENCY_COMBO, CB_RESETCONTENT, 0, 0 ); 
-	for( i = 0; i < 9; i++ ) {
+	for( i = 0; i < Config.netplay.nLatencyMax; i++ ) {
 		CHAR	szStr[64];
 		::wsprintf( szStr,  "%d Frame buffer", i+1 );
 		::SendDlgItemMessage( m_hWnd, IDC_NET_LATENCY_COMBO, CB_INSERTSTRING, -1, (LPARAM)szStr );

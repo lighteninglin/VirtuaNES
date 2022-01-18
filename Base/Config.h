@@ -199,6 +199,9 @@ public:
 	CHAR	szRecentHost[16][_MAX_PATH+1];
 	CHAR	szNick[_MAX_PATH+1];
 
+	// 增加设置最大缓冲帧数
+	INT nLatencyMax;
+
 	void	Default();
 };
 
